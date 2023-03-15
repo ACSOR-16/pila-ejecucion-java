@@ -1,8 +1,8 @@
-public class MiExpextion extends RuntimeException{
+public class MiExpextion extends Exception{
     public MiExpextion() {
         super();
     }
     public MiExpextion(String message) {
-        super();
+        super(message);
     }
 }
