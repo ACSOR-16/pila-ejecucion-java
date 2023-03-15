@@ -12,28 +12,7 @@ public class Flujo {
     }
     public static void metodo2(){
         System.out.println("Inicio de metodo2");
-        for(int i =1; i<= 5; i++){
-        System.out.println("i");
-        try {//intenta error
-
-            if (i == 3) {
-                
-                int numero = 0;
-                int resultado = i/numero;
-                System.out.println(resultado);
-            }
-
-            String test = null;
-            System.out.println(test.toString());
-
-        } catch(ArithmeticException|NullPointerException exception) {//atrapa error
-
-            System.out.println("Atrapa Exception");
-            System.out.println(exception.getMessage());
-            exception.printStackTrace();
-        }
-    
-        }
-        System.out.println("Fin de metodo2");
+        //throw new ArithmeticException();
+        throw new ArithmeticException("Surgió un error");
     }
 }
