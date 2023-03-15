@@ -15,24 +15,24 @@ public class Flujo {
         for(int i =1; i<= 5; i++){
         System.out.println("i");
         try {//intenta error
-            // int numero = 0;
-            // int resultado = i/numero;
-            // System.out.println(resultado);
+
+            if (i == 3) {
+                
+                int numero = 0;
+                int resultado = i/numero;
+                System.out.println(resultado);
+            }
+
             String test = null;
             System.out.println(test.toString());
 
-        } catch(ArithmeticException exception) {//atrapa error
+        } catch(ArithmeticException|NullPointerException exception) {//atrapa error
 
-            System.out.println("Atrapa Arihmetic");
+            System.out.println("Atrapa Exception");
             System.out.println(exception.getMessage());
             exception.printStackTrace();
         }
-        catch(NullPointerException exception) {//atrapa error
-            
-            System.out.println("Atrapa Nullpointer");
-            System.out.println(exception.getMessage());
-            exception.printStackTrace();
-        }
+    
         }
         System.out.println("Fin de metodo2");
     }
