@@ -1,16 +1,28 @@
 public class TestConexion {
-    public static void main(String[] args) {
-        Conexion conex = new Conexion();
-        try { // puede funcionar con catch o finally
+    public static void main(String[] args) throws Exception{
+       
+        try (Conexion conex = new Conexion()) {
             conex.leerDatos();
-            conex.cerrar();
+       } catch (IllegalStateException ex) {
+        System.out.println("ejecutando catch");
+        ex.printStackTrace();
+       }
+       
+       
+        /* 
+        Conexion conex = null;
+        try { // puede funcionar con catch o finally
+            conex = new Conexion();
+            conex.leerDatos();
         } catch (IllegalStateException ise) {
             System.out.println("se recibio exception");
             ise.printStackTrace();
-            conex.cerrar();
         } finally { //tercera estructura
             System.out.println("ejecutando finally");
-            conex.cerrar();
+            if (conex != null) {
+                conex.cerrar();
+            }
         }
+        */
     }
 }
